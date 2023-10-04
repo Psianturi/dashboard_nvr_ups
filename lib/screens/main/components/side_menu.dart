@@ -55,11 +55,6 @@ class SideMenu extends StatelessWidget {
               onPress: () {},
             ),
             DrawerListTile(
-              title: "Store",
-              svgSrc: "assets/icons/menu_store.svg",
-              onPress: () {},
-            ),
-            DrawerListTile(
               title: "Notification",
               svgSrc: "assets/icons/menu_notification.svg",
               onPress: () {},
@@ -73,6 +68,13 @@ class SideMenu extends StatelessWidget {
               title: "Settings",
               svgSrc: "assets/icons/menu_setting.svg",
               onPress: () {},
+            ),
+            DrawerListTile(
+              title: "Logout",
+              svgSrc: "assets/icons/menu_store.svg",
+              onPress: () {
+                Navigator.pushNamed(context, '/logout');
+              },
             ),
           ],
         ),
