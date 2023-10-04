@@ -3,6 +3,7 @@ import 'package:dashboard_nvr_ups/screens/coba.dart';
 import 'package:dashboard_nvr_ups/screens/dashboard/dashboard_screen.dart';
 import 'package:dashboard_nvr_ups/screens/main/components/side_menu.dart';
 import 'package:dashboard_nvr_ups/screens/main/main_screen.dart';
+import 'package:dashboard_nvr_ups/screens/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -26,16 +27,17 @@ class MyApp extends StatelessWidget {
             .apply(bodyColor: Colors.white),
         canvasColor: secondaryColor,
       ),
-      home: MultiProvider(
-        providers: [
-          ChangeNotifierProvider(
-            create: (context) => MenuAppController(),
-          ),
-        ],
-        child: MainScreen(),
-      ),
+        // home:  WelcomeScreen(),
+      // home: MultiProvider(
+      //   providers: [
+      //     ChangeNotifierProvider(
+      //       create: (context) => MenuAppController(),
+      //     ),
+      //   ],
+      //   child: MainScreen(),
+      // ),
         routes: {
-          // '/': (context) => const DashboardScreen(),
+          '/': (context) => const WelcomeScreen(),
           '/transaction': (context) => Coba(),
         }
         );

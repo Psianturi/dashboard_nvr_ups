@@ -1,8 +1,9 @@
-import 'package:dashboard_nvr_ups/screens/coba.dart';
-import 'package:dashboard_nvr_ups/screens/dashboard/dashboard_screen.dart';
-import 'package:dashboard_nvr_ups/screens/main/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
+
+import '../../../controllers/MenuAppController.dart';
+import '../main_screen.dart';
 
 class SideMenu extends StatelessWidget {
   const SideMenu({
@@ -22,7 +23,22 @@ class SideMenu extends StatelessWidget {
               title: "Dashboard",
               svgSrc: "assets/icons/menu_dashboard.svg",
               onPress: () {
-                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return
+                        MultiProvider(
+                          providers: [
+                            ChangeNotifierProvider(
+                              create: (context) => MenuAppController(),
+                            ),
+                          ],
+                          child: MainScreen(),
+                        );
+                    },
+                  ),
+                );
 
               },
             ),
