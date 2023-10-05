@@ -14,19 +14,30 @@ class LoginAndSignupBtn extends StatelessWidget {
       children: [
         Hero(
           tag: "login_btn",
-          child: ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return const LoginScreen();
-                  },
-                ),
-              );
-            },
-            child: Text(
-              "Login".toUpperCase(),
+          child: ElevatedButtonTheme(
+            data: ElevatedButtonThemeData(
+              style: ElevatedButton.styleFrom(
+                elevation: 0,
+                backgroundColor: primaryColor,
+                shape: const StadiumBorder(),
+                maximumSize: const Size(double.infinity, 56),
+                minimumSize: const Size(double.infinity, 56),
+              ),
+            ),
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const LoginScreen();
+                    },
+                  ),
+                );
+              },
+              child: Text(
+                "Login".toUpperCase(),
+              ),
             ),
           ),
         ),
@@ -43,7 +54,12 @@ class LoginAndSignupBtn extends StatelessWidget {
             );
           },
           style: ElevatedButton.styleFrom(
-              backgroundColor: kPrimaryLightColor, elevation: 0),
+            elevation: 0,
+            backgroundColor: kPrimaryLightColor,
+            shape: const StadiumBorder(),
+            maximumSize: const Size(double.infinity, 56),
+            minimumSize: const Size(double.infinity, 56),
+          ),
           child: Text(
             "Sign Up".toUpperCase(),
             style: const TextStyle(color: Colors.black),
